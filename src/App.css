@@ -1,33 +1,183 @@
-.App {
-  text-align: center;
+html{
+    height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+nav{
+    position: fixed; 
+    height: 60px;
+    width: 100%;
+    background-color: #43E895;
+    color: #fff;
+    font-size: 17px;
+    font-family: "Avenir Next Demi", Arial, sans-serif;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 200;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-bar-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pointer:hover {
+    cursor: pointer;
+}
+
+
+.container {
+    margin: 0 auto;
+    height: 100%;
+
+}
+
+.side-drawer{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.5s;
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    transition: -webkit-transform 0.5s ease-out;
+    -o-transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+    padding-top: 60px;
+    float: left;
+    color: white;
+}
+
+.side-drawer.open{
+
+            -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                    transform: translateX(0);
+}
+
+.grid-row {
+    margin-top: 60px;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+.grid-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; 
+    height: 180px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: white;
+    padding-left: 12px;
+    padding-bottom: 6px;
+}
+
+.grid-item:hover{
+    cursor: pointer;
+}
+
+.name{
+    font-size: 16px;
+    font-family: "Avenir Next Demi", Arial, sans-serif;
+    font-weight: 700;
+    padding-bottom: 6px;
+}
+
+.category{
+    font-size: 12px;
+    font-family: "Avenir Next", Arial, sans-serif;
+}
+
+.detail-map{
+    height: 180px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.detail-heading{
+    height: 60px;
+    background-color: #34b379;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 12px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    
+}
+
+.detail-info{
+    color: #2a2a2a;
+    background-color: #fff;
+    font-size: 16px;
+    font-family: "Avenir Next", Arial, sans-serif;
+    padding-top: 16px;
+    padding-left: 12px;
+    
+}
+
+.detail-spacer{
+    padding-top: 26px;
+    margin: 0px;
+}
+
+@media(min-width: 600px) {
+    .grid-item {
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+    }
+
+    .side-drawer{
+        width: 45%;
+
+    }
 }
